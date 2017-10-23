@@ -14,18 +14,18 @@ public class Login extends TestScritpt{
 		LoginCheck obj= new LoginCheck();
 		
 		Status = obj.invalidLogin();
-//		Status = obj.validLogin();
-//		Status = obj.when_I_Click_on_productNavigation();
-//		Status = obj.when_I_Click_on_myCart();
-//		Status = obj.when_I_Click_on_myWhishlist();
-//		Status = obj.when_I_Click_on_myOrders();
-//		Status = obj.when_I_Click_on_myAccount();
-//		Status = obj.when_I_Click_on_myRewards();
-//		Status = obj.when_I_Click_on_myNotifications();
-//		Status = obj.when_I_Click_on_myOrders();
-//		Status = obj.when_I_Click_on_helpCentre();
-//		Status = obj.when_I_Click_on_giftCard();
-//		Status = obj.when_I_Click_on_offerZone();
+Status = obj.validLogin();
+Status = obj.when_I_Click_on_productNavigation();
+	Status = obj.when_I_Click_on_myCart();
+	Status = obj.when_I_Click_on_myWhishlist();
+	Status = obj.when_I_Click_on_myOrders();
+	Status = obj.when_I_Click_on_myAccount();
+	Status = obj.when_I_Click_on_myRewards();
+	Status = obj.when_I_Click_on_myNotifications();
+	Status = obj.when_I_Click_on_myOrders();
+	Status = obj.when_I_Click_on_helpCentre();
+	Status = obj.when_I_Click_on_giftCard();
+	Status = obj.when_I_Click_on_offerZone();
 		
 		
 		

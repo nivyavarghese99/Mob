@@ -125,7 +125,7 @@ public class LoginCheck{
 	String when_I_Click_on_offerZone(){
 		String OFvalue, Status;
 		
-		driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementById("com.flipkart.android:id/logo_icon").click();
 		driver.findElementByAndroidUIAutomator("text(\"My Cart\")").click();
@@ -149,7 +149,7 @@ public class LoginCheck{
 	String when_I_Click_on_myNotifications(){
 		String Nvalue, Status;
 		
-		driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementById("com.flipkart.android:id/logo_icon").click();
 		driver.findElementByAndroidUIAutomator("text(\"Notifications\")").click();
@@ -173,7 +173,7 @@ public class LoginCheck{
 	String when_I_Click_on_myRewards(){
 		String Rvalue, Status;
 		
-		driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementById("com.flipkart.android:id/logo_icon").click();
 		driver.findElementByAndroidUIAutomator("text(\"My Rewards\")").click();
