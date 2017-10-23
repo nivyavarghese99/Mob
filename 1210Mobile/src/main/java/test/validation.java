@@ -10,43 +10,44 @@ public class validation extends TestScritpt{
 	
 
 	public static void main(String[] args) throws MalformedURLException {
-		String Status;
+		//String Status;
 	
 		AndroidDriver<AndroidElement> driver=capabilities();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.findElementByXPath("//android.widget.Button[@text = 'Existing User? SIGN IN']").click();
-		driver.findElementByXPath("//android.widget.EditText[@text = 'Email/Mobile no.']").click();
-		driver.findElementByClassName("android.widget.EditText").sendKeys("9496616082");
-
-		 driver.findElementById("com.flipkart.android:id/et_password").sendKeys("qwerty123456");
-		 driver.findElementByXPath("//android.widget.Button[@text = 'SIGN IN']").click();
-				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-				driver.findElementById("com.flipkart.android:id/logo_icon").click();
-				driver.findElementByAndroidUIAutomator("text(\"My Account\")").click();
-				//System.out.println(driver.findElementByXPath("//android.view.View[@content-desc = 'Nivya']").getText());
-				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-				
-				
-            driver.findElementByXPath("//android.view.View[@content-desc = 'editprofile']").click();
-            String name=driver.findElementById("first_name").getText();
-          
-            if(name == "Nivya"){
-        			
-        			Status = "pass";
-        			
-        		}else{
-        			 Status = "fail";
-        			
-        		}
-            System.out.println("Login Person"+name);
-        		//return Status;
+//		driver.findElementByXPath("//android.widget.Button[@text = 'Existing User? SIGN IN']").click();
+//		driver.findElementByXPath("//android.widget.EditText[@text = 'Email/Mobile no.']").click();
+//		driver.findElementByClassName("android.widget.EditText").sendKeys("9496616082");
+//
+//		 driver.findElementById("com.flipkart.android:id/et_password").sendKeys("qwerty123456");
+//		 driver.findElementByXPath("//android.widget.Button[@text = 'SIGN IN']").click();
+//				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//				driver.findElementById("com.flipkart.android:id/logo_icon").click();
+//				driver.findElementByAndroidUIAutomator("text(\"My Account\")").click();
+//				//System.out.println(driver.findElementByXPath("//android.view.View[@content-desc = 'Nivya']").getText());
+//				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//				
+//				
+//            driver.findElementByXPath("//android.view.View[@content-desc = 'editprofile']").click();
+//            String name=driver.findElementById("first_name").getText();
+//          
+//            if(name == "Nivya"){
+//        			
+//        			Status = "pass";
+//        			
+//        		}else{
+//        			 Status = "fail";
+//        			
+//        		}
+//            System.out.println("Login Person"+name);
+//            System.out.println("Login Person"+Status);
+//        		//return Status;
         		
             	
             
 				//System.out.println(driver.findElementById("first_name").getText());
 				
-				driver.findElementByXPath("//android.widget.Button[@content-desc = 'SUBMIT']").click();
-				driver.findElementByXPath("//android.view.View[@content-desc = 'Logout of this app']").click();
+//				driver.findElementByXPath("//android.widget.Button[@content-desc = 'SUBMIT']").click();
+//				driver.findElementByXPath("//android.view.View[@content-desc = 'Logout of this app']").click();
 //				driver.findElementByClassName("android.widget.ImageButton").click();
 //				driver.findElementByXPath("//android.widget.TextView[@text = 'Home']").click();
 //				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -66,6 +67,28 @@ public class validation extends TestScritpt{
 				
 				
 
+		
+		String Avalue, Status;
+		driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByAndroidUIAutomator("text(\"My Account\")").click();
+		Avalue = driver.findElementByXPath("//android.widget.TextView[@text = 'My Account']").getText();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByClassName("android.widget.ImageButton").click();
+		
+		if(Avalue.equals("My Account")){
+  			
+       	 Status = "pass";
+    			
+    		}else{
+    			Status = "fail";
+    			
+    		}
+        System.out.println("Messsage"+Avalue);
+         System.out.println("Messsage"+Status);
+     		//return Status;
 }
 }
 

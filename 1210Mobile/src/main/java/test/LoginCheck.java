@@ -9,7 +9,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import junit.framework.Assert;
 
-public class LoginCheck {
+public class LoginCheck{
 	
 	LoginCheck() throws MalformedURLException{
 	//AndroidDriver<AndroidElement> driver;	
@@ -34,7 +34,7 @@ public class LoginCheck {
 		 driver.findElementByXPath("//android.widget.TextView[@text = 'Account does not exist']").getText();
 		 value = driver.findElementByXPath("//android.widget.TextView[@text = 'Account does not exist']").getText();
 		 
-		 if(value == "Account does not exist"){
+		 if(value.equals("Account does not exist")) {
   			
   			Status = "pass";
   			
@@ -75,7 +75,7 @@ public class LoginCheck {
          String name=driver.findElementById("first_name").getText();
          driver.findElementByXPath("//android.widget.Button[@content-desc = 'SUBMIT']").click();
        
-         if(name == "Nivya"){
+         if(name.equals("Nivya")){
      			
         	 Status = "pass";
      			
@@ -89,25 +89,28 @@ public class LoginCheck {
 		
 		}
 	
-	String  productNavigation()
+	String  when_I_Click_on_productNavigation()
 	{
 		String Pvalue, Status;
-		driver.findElementById("com.flipkart.android:id/btn_skip").click();
-		driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		//driver.findElementByXPath("//android.widget.ImageButton[@resource-id = 'com.flipkart.android:id/btn_skip']").click();
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.findElementByXPath("//android.widget.ImageButton[@content-desc = 'Open Drawer']").click();
+		//driver.findElementById("com.flipkart.android:id/logo_icon").click();
 		//driver.findElementByClassName("//android.widget.ImageButton").click();
 		driver.findElementById("com.flipkart.android:id/flyout_parent_title").click();
 		driver.findElementByAndroidUIAutomator("text(\"Mobiles\")").click();
-		 Pvalue = driver.findElementByXPath("//android.view.View[@text = 'Mobiles Destination']").getText();
+		Pvalue = driver.findElementByXPath("//android.widget.TextView[@text = 'Mobiles Destination']").getText();
         
 	    
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    driver.findElementByXPath("//android.widget.ImageButton[@content-desc = 'Back Button']").click();
 		driver.findElementByClassName("android.widget.ImageButton").click();
 		driver.findElementByClassName("android.widget.ImageButton").click();
 		//driver.findElementByClassName("android.widget.ImageButton").click();
 		
 		
 		
-		 if(Pvalue == "Mobiles Destination"){
+		 if(Pvalue.equals("Mobiles Destination")){
   			
         	 Status = "pass";
      			
@@ -119,17 +122,91 @@ public class LoginCheck {
      		return Status;
 		
 	}
-	
-	String myCart(){
-		String Cvalue, Status;
+	String when_I_Click_on_offerZone(){
+		String OFvalue, Status;
 		
 		driver.findElementById("com.flipkart.android:id/btn_skip").click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
 		driver.findElementByAndroidUIAutomator("text(\"My Cart\")").click();
-		Cvalue = driver.findElementByXPath("//android.view.View[@text = 'My Cart']").getText();
+		OFvalue = driver.findElementByXPath("//android.widget.TextView[@text = 'Offer Zone']").getText();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementByClassName("android.widget.ImageButton").click();
-		 if(Cvalue == "Mobiles Destination"){
+		
+		 if(OFvalue.equals("Offer Zone")){
+	  			
+        	 Status = "pass";
+     			
+     		}else{
+     			Status = "fail";
+     			
+     		}
+         System.out.println("Messsage"+OFvalue);
+     		return Status;
+	
+		
+	}
+	String when_I_Click_on_myNotifications(){
+		String Nvalue, Status;
+		
+		driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		driver.findElementByAndroidUIAutomator("text(\"Notifications\")").click();
+		Nvalue = driver.findElementByXPath("//android.widget.TextView[@text = 'Notifications']").getText();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByClassName("android.widget.ImageButton").click();
+		
+		 if(Nvalue.equals("Notifications")){
+	  			
+        	 Status = "pass";
+     			
+     		}else{
+     			Status = "fail";
+     			
+     		}
+         System.out.println("Messsage"+Nvalue);
+     		return Status;
+	
+		
+	}
+	String when_I_Click_on_myRewards(){
+		String Rvalue, Status;
+		
+		driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		driver.findElementByAndroidUIAutomator("text(\"My Rewards\")").click();
+		Rvalue = driver.findElementByXPath("//android.widget.TextView[@text = 'My Rewards']").getText();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByClassName("android.widget.ImageButton").click();
+		
+		 if(Rvalue.equals("My Rewards")){
+	  			
+        	 Status = "pass";
+     			
+     		}else{
+     			Status = "fail";
+     			
+     		}
+         System.out.println("Messsage"+Rvalue);
+     		return Status;
+	
+		
+	}
+	
+	String when_I_Click_on_myCart(){
+		String Cvalue, Status;
+		
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		driver.findElementByAndroidUIAutomator("text(\"My Cart\")").click();
+		Cvalue = driver.findElementByXPath("//android.widget.TextView[@text = 'My Cart']").getText();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByClassName("android.widget.ImageButton").click();
+		
+		 if(Cvalue.equals("My Cart")){
 	  			
         	 Status = "pass";
      			
@@ -142,18 +219,18 @@ public class LoginCheck {
 	
 		
 	}
-	String myWhishlist(){
+	String when_I_Click_on_myWhishlist(){
 		String Wvalue, Status;
-		driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementById("com.flipkart.android:id/logo_icon").click();
 		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementByAndroidUIAutomator("text(\"My Wishlist\")").click();
-		Wvalue = driver.findElementByXPath("//android.view.View[@text = 'Wishlist']").getText();
+		Wvalue = driver.findElementByXPath("//android.widget.TextView[@text = 'Wishlist']").getText();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementByClassName("android.widget.ImageButton").click();
 		
-		if(Wvalue == "Wishlist"){
+		if(Wvalue.equals("Wishlist")){
   			
        	 Status = "pass";
     			
@@ -167,17 +244,18 @@ public class LoginCheck {
 		
 	}
 
-	String myOrders(){
+	String when_I_Click_on_myOrders(){
 		String Ovalue, Status;
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		//driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementByAndroidUIAutomator("text(\"My Orders\")").click();
-		Ovalue = driver.findElementByXPath("//android.view.View[@text = 'My Orders']").getText();
+		Ovalue = driver.findElementByXPath("//android.widget.TextView[@text = 'My Orders']").getText();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementByClassName("android.widget.ImageButton").click();
 		
-		if(Ovalue == "My Orders"){
+		if(Ovalue.equals("My Orders")){
   			
        	 Status = "pass";
     			
@@ -190,4 +268,79 @@ public class LoginCheck {
 	
 		
 	}
+	
+	String when_I_Click_on_myAccount(){
+		String Avalue, Status;
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByAndroidUIAutomator("text(\"My Account\")").click();
+		Avalue = driver.findElementByXPath("//android.widget.TextView[@text = 'My Account']").getText();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByClassName("android.widget.ImageButton").click();
+		
+		if(Avalue.equals("My Account")){
+  			
+       	 Status = "pass";
+    			
+    		}else{
+    			Status = "fail";
+    			
+    		}
+        System.out.println("Messsage"+Avalue);
+    		return Status;
+	
+		
+	}
+	String when_I_Click_on_giftCard(){
+		String Avalue, Status;
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByAndroidUIAutomator("text(\"Gift Card\")").click();
+		Avalue = driver.findElementByXPath("//android.widget.TextView[@text = 'Gift Card']").getText();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByClassName("android.widget.ImageButton").click();
+		
+		if(Avalue.equals("Gift Card")){
+  			
+       	 Status = "pass";
+    			
+    		}else{
+    			Status = "fail";
+    			
+    		}
+        System.out.println("Messsage"+Avalue);
+    		return Status;
+	
+		
+	}
+	
+	String when_I_Click_on_helpCentre(){
+		String Avalue, Status;
+		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementById("com.flipkart.android:id/logo_icon").click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByAndroidUIAutomator("text(\"Help Centre\")").click();
+		Avalue = driver.findElementByXPath("//android.widget.TextView[@text = 'Help Centre']").getText();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElementByClassName("android.widget.ImageButton").click();
+		
+		if(Avalue.equals("Help Centre")){
+  			
+       	 Status = "pass";
+    			
+    		}else{
+    			Status = "fail";
+    			
+    		}
+        System.out.println("Messsage"+Avalue);
+    		return Status;
+	
+		
+	}
+	
 }

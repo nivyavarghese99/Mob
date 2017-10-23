@@ -42,17 +42,17 @@ AndroidDriver<AndroidElement> driver=capabilities();
 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 // login
 
-driver.findElementByXPath("//android.widget.Button[@text = 'Existing User? SIGN IN']").click();
-driver.findElementByXPath("//android.widget.EditText[@text = 'Email/Mobile no.']").click();
-driver.findElementByClassName("android.widget.EditText").sendKeys("9496616082");
-
- driver.findElementById("com.flipkart.android:id/et_password").sendKeys("qwerty123456");
- driver.findElementByXPath("//android.widget.Button[@text = 'SIGN IN']").click();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//driver.findElementByXPath("//android.widget.Button[@text = 'Existing User? SIGN IN']").click();
+//driver.findElementByXPath("//android.widget.EditText[@text = 'Email/Mobile no.']").click();
+//driver.findElementByClassName("android.widget.EditText").sendKeys("9496616082");
+//
+// driver.findElementById("com.flipkart.android:id/et_password").sendKeys("qwerty123456");
+// driver.findElementByXPath("//android.widget.Button[@text = 'SIGN IN']").click();
+//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		// product navigation
 		
-		//driver.findElementById("com.flipkart.android:id/btn_skip").click();
+		driver.findElementById("com.flipkart.android:id/btn_skip").click();
 		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElementById("com.flipkart.android:id/logo_icon").click();
 		//driver.findElementByClassName("//android.widget.ImageButton").click();
@@ -140,6 +140,7 @@ driver.findElementByClassName("android.widget.EditText").sendKeys("9496616082");
 				//driver.findElementById("com.flipkart.android:id/btn_skip").click();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				//driver.findElementById("com.flipkart.android:id/logo_icon").click();
+				driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Legal\"));");
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				driver.findElementByAndroidUIAutomator("text(\"Help Centre\")").click();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
